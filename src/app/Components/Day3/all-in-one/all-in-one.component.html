@@ -1,0 +1,67 @@
+<div class="m-3">
+  <h3>Registration</h3>
+  <div class="myForm d-flex flex-column align-items-center gap-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+      [(ngModel)]="name"
+    />
+    @if((name.length <= 2 && name.length !== 0)){
+    <div class="alert-age">Name must be at least 3 characters</div>
+    }
+
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Age"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+      [(ngModel)]="age"
+    />
+    @if(!(+age > 20 && +age < 40) && age.length != 0){
+    <div class="alert-age">Enter valid age between 20 and 40</div>
+    }
+    <button type="button" class="btn btn-info" (click)="Add()">ADD</button>
+  </div>
+</div>
+
+<!-- Directives Structural  -->
+<!-- <table class="container-table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let val of Students">
+      <th scope="row">1</th>
+      <td>{{ val.name }}</td>
+      <td>{{ val.age }}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- Control Flow -->
+<table class="container-table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(student of Students; track student.name){
+    <tr>
+      <th scope="row">{{ student.id }}</th>
+      <td>{{ student.name }}</td>
+      <td>{{ student.age }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

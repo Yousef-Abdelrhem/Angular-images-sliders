@@ -1,0 +1,23 @@
+*{
+    color: white;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 2rem;
+    
+}
+
+button{
+    width:40%;
+}
+input{
+    color: black;
+    max-width: 206px;
+}
+
+.alert-age{
+    color: rgb(227, 101, 101);
+    margin: 0.1rem;
+    font-weight: bold;
+}

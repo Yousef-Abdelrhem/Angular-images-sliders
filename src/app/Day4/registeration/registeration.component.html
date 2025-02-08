@@ -1,0 +1,30 @@
+<div class="m-3">
+    <h3>Registration</h3>
+    <div class="myForm d-flex flex-column align-items-center gap-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Name"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        [(ngModel)]="name"
+      />
+      @if((name.length <= 2 && name.length !== 0)){
+      <div class="alert-age">Name must be at least 3 characters</div>
+      }
+  
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Age"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        [(ngModel)]="age"
+      />
+      @if(!(+age > 20 && +age < 40) && age.length != 0){
+      <div class="alert-age">Enter valid age between 20 and 40</div>
+      }
+      <button type="button" class="btn btn-info" (click)="Add()">ADD</button>
+    </div>
+  </div>
+  

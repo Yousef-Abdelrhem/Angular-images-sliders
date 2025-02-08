@@ -1,0 +1,19 @@
+*{
+    color: white;
+}
+.container-table {
+    border-radius: 50vh !important;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+ 
+}
+
+tr{
+    border-bottom: 1px solid white !important;
+    
+}
+
+td, th{
+    padding: 5px;
+}
