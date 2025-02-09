@@ -6,6 +6,8 @@ import { AllInOneComponent } from './Components/Day3/all-in-one/all-in-one.compo
 import { RegisterationComponent } from './Day4/registeration/registeration.component';
 import { student } from './Day4/registeration/model';
 import { StudentComponent } from './Day4/student/student.component';
+import { AddUserComponent } from './Day4-FormControl/AddForm/add-user/add-user.component';
+import { UserTableComponent } from './Day4-FormControl/userTable/user-table/user-table.component';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +15,17 @@ import { StudentComponent } from './Day4/student/student.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [FirstComponent , SecondComponent, AllInOneComponent ,
-  RegisterationComponent ,StudentComponent]
+  RegisterationComponent ,StudentComponent, AddUserComponent , UserTableComponent]
 })
 export class AppComponent {
   title = 'demo';
-  Students : student[] = [];
-  student: student = { id: 0, name: '', age: 0 };
-  receiveStudent ($event : any) {
-    this.Students.push($event);
+  student: student | null = null;
+  Students : student[]  = [];
+  receiveStudent (data : any) {
+    this.student = data;
+    this.Students.push(data);
     console.log(this.Students);
   }
+
+
 }

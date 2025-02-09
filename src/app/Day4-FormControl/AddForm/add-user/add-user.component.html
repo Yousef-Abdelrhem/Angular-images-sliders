@@ -1,4 +1,4 @@
-<div class="m-3">
+<form [formGroup]="Form" (ngSubmit)="Add()" class="m-3">
   <h3>Registration</h3>
   <div class="myForm d-flex flex-column align-items-center gap-3">
     <input
@@ -7,9 +7,9 @@
       placeholder="Name"
       aria-label="Username"
       aria-describedby="basic-addon1"
-      [(ngModel)]="name"
+      formControlName="name"
     />
-    @if((name.length <= 2 && name.length !== 0)){
+    @if((!(Form.controls['name'].valid) && Form.controls['name'].value !==null )){
     <div class="alert-age">Name must be at least 3 characters</div>
     }
 
@@ -19,11 +19,11 @@
       placeholder="Age"
       aria-label="Username"
       aria-describedby="basic-addon1"
-      [(ngModel)]="age"
+      formControlName="age"
     />
-    @if(!(+age > 20 && +age < 40) && age.length != 0){
+    @if(!(Form.controls['age'].valid) && Form.controls['age'].value !==null ){
     <div class="alert-age">Enter valid age between 20 and 40</div>
     }
-    <button type="button" class="btn btn-info" (click)="Add()">ADD</button>
+    <button type="submit" class="btn btn-info">ADD</button>
   </div>
-</div>
+</form>

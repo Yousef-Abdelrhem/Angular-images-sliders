@@ -9,10 +9,6 @@ import { student } from '../registeration/model';
 })
 export class StudentComponent {
   @Input() Students : student[] =[{ id: 0 , age: 0, name:''}];
-
-    
-  ngOnInit(): void {
-    
-    
+  ngOnInit(): void {    
   }
 }
